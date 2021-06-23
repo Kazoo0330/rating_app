@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @post.content %>
+</p>
+
+<div class="relative-post-evaluation">
+  <span>評価：</span>
+  <span id="star-rate-<%= @post.id %>"></span>
+  <script>
+    $('#star-rate-<%= @post.id %>').raty({
+      size: 36,
+      starOff: "<%= asset_path('star-off.png') %>",
+      starOn: "<%= asset_path('star-on.png') %>",
+      starHalf: "<%= asset_path('star-half.png') %>",
+      half: true,
+      readOnly: true,
+      score: <%= @post.evaluation %>,
+    });
+  </script>
+  <%= @post.evaluation %>
+</div>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>

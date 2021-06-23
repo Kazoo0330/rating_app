@@ -1,0 +1,7 @@
+{
+  "name": "rating_app",
+  "private": true,
+  "dependencies": {
+    "jquery": "^3.6.0"
+  }
+}
